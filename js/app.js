@@ -9,15 +9,19 @@ const loadData = async (url) => {
   }
 };
 
-const getCategory = async() => {
-    
-  const categoryData = await loadData("https://openapi.programming-hero.com/api/news/categories");
+const getCategory = async () => {
+  const categoryContainer = document.getElementById("category-container");
+  const categoryData = await loadData(
+    "https://openapi.programming-hero.com/api/news/categories"
+  );
 
   const categories = categoryData.data.news_category;
 
-
-  for(const category of categories){
-    console.log(category.category_name)
+  for (const category of categories) {
+    const categoryName = (category.category_name);
+    const li = document.createElement('li');
+    li.innerText = categoryName;
+    categoryContainer.appendChild(li);
   }
 };
 
