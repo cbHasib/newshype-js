@@ -1,0 +1,26 @@
+.bg-color{
+    background-color: #F6F6F6;
+}
+.myMenu {
+    color: #858585;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.myMenu li{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.myMenu li:hover{
+    cursor: pointer;
+        color: hsl(var(--p));
+        background-color: #EEEFFF;
+}
+.active-menu{
+    color: hsl(var(--p));
+    background-color: #EEEFFF;
+}
+
+.h-300{
+    height: 300px;
+}
