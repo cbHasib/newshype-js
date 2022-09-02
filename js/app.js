@@ -2,13 +2,10 @@ const loadData = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    // console.log(data.data.news_category[0].category_name);
     return data;
   } catch (error) {
-    const errorElement = document.getElementById("error-element");
-    errorElement.classList.remove("hidden");
-    const errorMessage = document.getElementById("error-message");
-    errorMessage.innerText = error;
+    alert("Failed to connect: ", error.message);   
+    return false;
   }
 };
 
@@ -19,7 +16,23 @@ const loadingSpinner = (isLoading) => {
     : loadingSpinnerElement.classList.add("hidden");
 };
 
-const displayCategoryNews = async (categoryId, element) => {
+const clearAllNews = () => {
+  const newsContainer = document.getElementById("news-container");
+  newsContainer.textContent = "";
+};
+
+const noData = (isNoData) => {
+  const noDataElement = document.getElementById('no-data-message'); 
+  if(isNoData === true){
+    noDataElement.classList.remove('hidden');
+  }
+  else{
+    noDataElement.classList.add('hidden');
+  }
+}
+
+const displayCategoryNews = async (categoryId, categoryName, element) => {
+  noData(false);
   // Remove old selected category
   const removeActive = document.querySelectorAll(".active-menu");
   removeActive[0].classList.remove("active-menu");
@@ -28,10 +41,34 @@ const displayCategoryNews = async (categoryId, element) => {
   // Load News Data
   const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
   const newsData = await loadData(url);
-  const newsAll = newsData.data;
+
+  if(newsData === false){
+    return;
+  }
+
+  let newsAll = newsData.data;
+  if (newsAll.length === 0) {
+    const countMessage = document.getElementById("news-count-message");
+    countMessage.textContent = "";
+    const div = document.createElement("div");
+    div.innerText = `No news found in ${categoryName}`;
+    countMessage.appendChild(div);
+    loadingSpinner(false);
+    noData(true);
+    return;
+  } else {
+    const newsCount = newsAll.length;
+    const countMessage = document.getElementById("news-count-message");
+    countMessage.textContent = "";
+    const div = document.createElement("div");
+    div.innerText = `${newsCount} items found for category ${categoryName}`;
+    countMessage.appendChild(div);
+  }
 
   const newsContainer = document.getElementById("news-container");
-  newsContainer.textContent = "";
+  clearAllNews();
+
+  newsAll = newsAll.sort((a, b) => b.total_view - a.total_view);
 
   newsAll.forEach((news) => {
     const {
@@ -119,7 +156,7 @@ const getCategory = async () => {
     li.innerText = category_name;
     li.setAttribute(
       "onclick",
-      `displayCategoryNews('${category_id}', this);loadingSpinner(true)`
+      `displayCategoryNews('${category_id}', '${category_name}', this);clearAllNews();loadingSpinner(true)`
     );
     categoryContainer.appendChild(li);
   }
