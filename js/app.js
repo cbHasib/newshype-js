@@ -96,8 +96,11 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
     </figure>
     <div class="card-body">
         <h2 class="card-title">${title}</h2>
-        <p>
+        <p class="md:hidden">
         ${details.slice(0, 350) + "..."}
+        </p>
+        <p class="hidden md:block">
+        ${details.slice(0, 150) + "..."}
         </p>
         <div class="card-actions grid grid-cols-2  lg:grid-cols-4 my-3">
 
