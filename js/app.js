@@ -84,7 +84,7 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
     const div = document.createElement("div");
     div.classList.add(
       "card",
-      "lg:card-side",
+      "md:card-side",
       "bg-base-200",
       "shadow-lg",
       "my-2"
@@ -92,16 +92,20 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
     div.innerHTML = `
     <figure class="px-3 py-3">
         <img src="${thumbnail_url}" alt="${title}"
-            class="rounded-xl object-cover h-300 w-60" />
+            class="rounded-xl object-cover w-full md:h-300 md:w-60" />
     </figure>
     <div class="card-body">
         <h2 class="card-title">${title}</h2>
         <p>
         ${details.slice(0, 350) + "..."}
         </p>
-        <div class="card-actions justify-between items-center">
-            <div class="flex">
-                <div class="flex items-center space-x-3"  title="Author Information">
+        <div class="card-actions grid grid-cols-2  lg:grid-cols-4 my-3">
+
+
+
+        
+            <div class="flex justify-center items-center">
+            <div class="flex items-center justify-center space-x-3"  title="Author Information">
                     <div class="avatar">
                         <div class="mask mask-circle w-12 h-12">
                             <img src="${img}"
@@ -118,7 +122,11 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
                     </div>
                 </div>
             </div>
-            <div class="flex gap-2 items-center justify-center"  title="Total Views">
+
+
+
+            
+            <div class="h-full flex gap-2 items-center justify-center"  title="Total Views">
                 <figure>
                     <img clas src="img/icon/carbon_view.svg" alt="">
                 </figure>
@@ -126,8 +134,10 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
                   total_view !== null ? total_view : "No Data"
                 }</div>
             </div>
-            <div class="flex items-center justify-center" title="${badge}">
 
+
+
+            <div class="flex h-full items-center justify-center" title="${badge}">
                 ${number === 5? `
                 <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
                 <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
@@ -191,10 +201,17 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
                 `}
 
             </div>
-            <div>
-              <label onclick="newsDetails('${_id}');" for="newsDetails" class="btn btn-primary shadow-md">Read More <img class="ml-2"
+
+
+
+            <div class="flex justify-center items-center h-full">
+              <label onclick="newsDetails('${_id}');" for="newsDetails" class="btn btn-primary shadow-md mx-auto">Read More <img class="ml-2"
               src="img/icon/arrow-right.svg" alt="Read More Button"></label>
               </div>
+
+
+
+
     </div>`;
 
     newsContainer.appendChild(div);
