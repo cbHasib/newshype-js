@@ -122,17 +122,73 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
                 <figure>
                     <img clas src="img/icon/carbon_view.svg" alt="">
                 </figure>
-                <div class="font-bold">${
+                <div class="font-bold" title="Total Views">${
                   total_view !== null ? total_view : "No Data"
                 }</div>
             </div>
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center" title="${badge}">
 
-                <img src="img/icon/star-half.svg" alt="">
-                <img src="img/icon/star-outline.svg" alt="">
-                <img src="img/icon/star-outline.svg" alt="">
-                <img src="img/icon/star-outline.svg" alt="">
-                <img src="img/icon/star-outline.svg" alt="">
+                ${number === 5? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                ` : number >= 4.5 && number < 5? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_half.svg" alt="Star Rating">
+                ` : number >= 4 && number < 4.5? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                ` : number >= 3.5 && number < 4? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_half.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                `: number >= 3 && number < 3.5? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                ` : number >= 2.5 && number < 3?`
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_half.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                ` : number >= 2 && number < 2.5? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                ` : number >= 1.5 && number < 2? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_half.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                ` : number >= 1 && number < 1.5? `
+                <img style="width: 24px" src="img/icon/star_full.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                ` : `
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                <img style="width: 24px" src="img/icon/star_blank.svg" alt="Star Rating">
+                `}
 
             </div>
             <div>

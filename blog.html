@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewsHype - Know the world!</title>
+    <title>Blog - NewsHype</title>
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
@@ -49,7 +49,7 @@
                     </label>
                     <ul tabindex="0"
                         class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a  onclick="window.location.href = 'index.html'">News</a></li>
+                        <li><a onclick="window.location.href = 'index.html'">News</a></li>
 
 
                         <li><a onclick="window.location.href = 'blog.html'">Blog</a></li>
@@ -59,10 +59,10 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
-                    <li class="text-primary underline decoration-solid underline-offset-4 font-bold"><a
-                        onclick="window.location.href = 'index.html'">News</a></li>
+                    <li><a onclick="window.location.href = 'index.html'">News</a></li>
 
-                    <li><a onclick="window.location.href = 'blog.html'">Blog</a></li>
+                    <li class="text-primary underline decoration-solid underline-offset-4 font-bold"><a
+                            onclick="window.location.href = 'blog.html'">Blog</a></li>
                 </ul>
             </div>
             <div class="navbar-end">
@@ -82,19 +82,6 @@
                 </button>
             </div>
         </div>
-        </div>
-
-
-
-        <!-- Menu -->
-        <section>
-            <ul class="myMenu my-3" id="category-container">
-                <li onclick="window.location.href = 'index.html'" class="active-menu">Home</li>
-            </ul>
-        </section>
-
-
-
     </header>
 
 
@@ -102,71 +89,56 @@
 
 
     <main class="w-5/6 mx-auto pb-10">
-
-        <!-- News Counter -->
-        <section class="w-fit mx-auto bg-base-200 my-5 px-10 py-4 rounded-lg font-semibold" id="news-count-message">
-            <div>No data found!</div>
-        </section>
-
-
-
-        <!-- Filter -->
-        <section class="py-5">
-            <div class="flex justify-between w-full items-center">
-                <div class="flex gap-3 justify-start items-center">
-                    <span>Sort By:</span>
-                    <select class="select select-bordered">
-                        <option disabled selected>View</option>
-                        <option>Date</option>
-                    </select>
-                </div>
-                <div class="flex gap-2 justify-end">
-                    <button class="btn btn-primary">Today's Pick</button>
-                    <button class="btn btn-outline btn-primary">Trending</button>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Spinner -->
-        <section id="loading-spinner" class="hidden">
-            <div class="text-center">
-                <div role="status">
-                    <svg class="inline mr-2 w-14 h-14 text-black animate-spin dark:text-black fill-yellow-400"
-                        viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                            fill="currentColor" />
-                        <path
-                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                            fill="currentFill" />
-                    </svg>
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- No Result Found -->
-        <section id="no-data-message" class="hidden">
-            <div class="flex justify-center">
-                <h2 class="text-4xl font-semibold text-orange-700" id="error-message">No data found!</h2>
-            </div>
-        </section>
-
         <!-- Main Content -->
         <section class="py-5">
-            <div class="grid grid-cols-1 gap-5" id="news-container">
-
-
+            
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+            <div>
+                <img class="rounded-lg" src="https://uploads-ssl.webflow.com/5c9521f1c2075bb4021ac0ad/5c9a3fdc58aa1c494c43b743_home%402x-80.jpg" alt="">
             </div>
+            <div>
+                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box rounded-b-none">
+                    <div class="collapse-title text-xl font-medium">
+                        Difference between var, let and const in JavaScript
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>The scope of a var variable is functional scope. The scope of a <strong><code>let & const</code></strong> variable is block scope.	</p>
+                    </div>
+                  </div>
+    
+    
+                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-none">
+                    <div class="collapse-title text-xl font-medium">
+                      Focus me to see content
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>tabindex="0" attribute is necessary to make the div focusable</p>
+                    </div>
+                  </div>
+    
+    
+                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-none">
+                    <div class="collapse-title text-xl font-medium">
+                      Focus me to see content
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>tabindex="0" attribute is necessary to make the div focusable</p>
+                    </div>
+                  </div>
+    
+    
+                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box rounded-t-none">
+                    <div class="collapse-title text-xl font-medium">
+                      Focus me to see content
+                    </div>
+                    <div class="collapse-content"> 
+                      <p>tabindex="0" attribute is necessary to make the div focusable</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+              
         </section>
-
-
-
-
-
-
-
     </main>
 
 
@@ -179,16 +151,7 @@
 
 
 
-    <!-- Popup Design -->
-    <input type="checkbox" id="newsDetails" class="modal-toggle" />
-    <div class="modal" id="modal-body">
-        
-    </div>
-
-
-
     <script src="js/dark.js"></script>
-    <script src="js/app.js"></script>
 </body>
 
 </html>
