@@ -101,7 +101,7 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
         </p>
         <div class="card-actions justify-between items-center">
             <div class="flex">
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-3  title="Author Information"">
                     <div class="avatar">
                         <div class="mask mask-circle w-12 h-12">
                             <img src="${img}"
