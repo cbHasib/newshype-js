@@ -55,7 +55,7 @@
                         <li><a onclick="window.location.href = 'blog.html'">Blog</a></li>
                     </ul>
                 </div>
-                <a href="" class="btn btn-ghost normal-case text-2xl">NewsHype</a>
+                <a href="index.html" class="btn btn-ghost normal-case text-2xl">NewsHype</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
@@ -90,55 +90,17 @@
 
     <main class="w-5/6 mx-auto pb-10">
         <!-- Main Content -->
-        <section class="py-5">
-            
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
-            <div>
-                <img class="rounded-lg" src="https://uploads-ssl.webflow.com/5c9521f1c2075bb4021ac0ad/5c9a3fdc58aa1c494c43b743_home%402x-80.jpg" alt="">
+
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-10" id="post-container">
+
+
+                
+
+
             </div>
-            <div>
-                <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box rounded-b-none">
-                    <div class="collapse-title text-xl font-medium">
-                        Difference between var, let and const in JavaScript
-                    </div>
-                    <div class="collapse-content"> 
-                      <p>The scope of a var variable is functional scope. The scope of a <strong><code>let & const</code></strong> variable is block scope.	</p>
-                    </div>
-                  </div>
-    
-    
-                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-none">
-                    <div class="collapse-title text-xl font-medium">
-                      Focus me to see content
-                    </div>
-                    <div class="collapse-content"> 
-                      <p>tabindex="0" attribute is necessary to make the div focusable</p>
-                    </div>
-                  </div>
-    
-    
-                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-none">
-                    <div class="collapse-title text-xl font-medium">
-                      Focus me to see content
-                    </div>
-                    <div class="collapse-content"> 
-                      <p>tabindex="0" attribute is necessary to make the div focusable</p>
-                    </div>
-                  </div>
-    
-    
-                  <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box rounded-t-none">
-                    <div class="collapse-title text-xl font-medium">
-                      Focus me to see content
-                    </div>
-                    <div class="collapse-content"> 
-                      <p>tabindex="0" attribute is necessary to make the div focusable</p>
-                    </div>
-                  </div>
-            </div>
-          </div>
-              
         </section>
+
     </main>
 
 
@@ -148,10 +110,21 @@
         </div>
     </footer>
 
+    
+
+    <!-- Popup Design -->
+    <input type="checkbox" id="postModalBox" class="modal-toggle" />
+    <div class="modal" id="post-modal-body">
+        <div class="modal-box">
+            
+        </div>        
+    </div>
 
 
 
     <script src="js/dark.js"></script>
+    <script src="js/post.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 
 </html>

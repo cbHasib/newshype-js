@@ -250,8 +250,8 @@ const newsDetails = async (newsId) => {
               <div class="avatar">
                   <div class="mask mask-circle w-12 h-12">
                       <img src="${img}" alt="${
-    name !== null ? name : " No Data Found"
-  }" />
+                            name !== null ? name : " No Data Found"
+                       }" />
                   </div>
               </div>
               <div>
