@@ -286,4 +286,12 @@ const newsDetails = async (newsId) => {
   modalBody.appendChild(div);
 };
 
+
 getCategory();
+
+const homeDataLoad = () =>{
+  loadingSpinner(true);
+  displayCategoryNews('01', 'Home', document.getElementById('home'));
+}
+
+homeDataLoad();

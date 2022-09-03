@@ -3,9 +3,9 @@
 }
 .myMenu {
     color: #858585;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 30px; */
 }
 .myMenu li{
     padding: 5px 10px;
