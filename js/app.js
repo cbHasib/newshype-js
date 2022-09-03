@@ -77,7 +77,6 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
       rating: { number, badge },
       author: { name, published_date, img },
       thumbnail_url,
-      image_url,
       details,
       others_info: { is_todays_pick, is_trending },
     } = news;
@@ -115,7 +114,7 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
                         <div class="font-bold">${
                           name !== null ? name : "No Data Found"
                         }</div>
-                        <div class="text-sm opacity-50">${published_date}</div>
+                        <div class="text-sm opacity-50">${published_date !== null? published_date : 'No Data Found'}</div>
                     </div>
                 </div>
             </div>
@@ -203,7 +202,7 @@ const newsDetails = async (newsId) => {
                   <div class="font-bold">${
                     name !== null ? name : "No Data Found"
                   }</div>
-                  <div class="text-sm opacity-50">${published_date}</div>
+                  <div class="text-sm opacity-50">${published_date !== null? published_date : 'No Data Found'}</div>
               </div>
           </div>
       </div>
