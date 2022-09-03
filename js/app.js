@@ -118,11 +118,11 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
                     </div>
                 </div>
             </div>
-            <div class="flex gap-2 items-center justify-center">
+            <div class="flex gap-2 items-center justify-center"  title="Total Views">
                 <figure>
                     <img clas src="img/icon/carbon_view.svg" alt="">
                 </figure>
-                <div class="font-bold" title="Total Views">${
+                <div class="font-bold">${
                   total_view !== null ? total_view : "No Data"
                 }</div>
             </div>
