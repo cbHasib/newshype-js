@@ -30,6 +30,17 @@ const noData = (isNoData) => {
   }
 };
 
+const filterContent = (filterBy) => {
+  const allNews = (document.getElementsByClassName('card'));
+  const filterElement = document.getElementsByClassName(`${filterBy}`);
+  for(let i=0; i<allNews.length; i++){
+    allNews[i].classList.add('hidden');
+  }
+  for(let i=0; i<filterElement.length; i++){
+    filterElement[i].classList.remove('hidden');
+  }
+} 
+
 const displayCategoryNews = async (categoryId, categoryName, element) => {
   noData(false);
   // Remove old selected category
@@ -64,10 +75,16 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
     countMessage.appendChild(div);
   }
 
+
+
+
+
+
   const newsContainer = document.getElementById("news-container");
   clearAllNews();
 
   newsAll = newsAll.sort((a, b) => b.total_view - a.total_view);
+
 
   newsAll.forEach((news) => {
     const {
@@ -89,6 +106,15 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
       "shadow-lg",
       "my-2"
     );
+    if(is_todays_pick === true){
+      div.classList.add("is_todays_pick");
+    }
+    if(is_trending === true){
+      div.classList.add("is_trending");
+    }
+    else{
+      div.classList.add('normal-news');
+    }
     div.innerHTML = `
     <figure class="px-3 py-3">
         <img src="${thumbnail_url}" alt="${title}"
@@ -220,6 +246,41 @@ const displayCategoryNews = async (categoryId, categoryName, element) => {
     newsContainer.appendChild(div);
     loadingSpinner(false);
   });
+
+
+
+
+    // Filtering Section
+    const filterSection = document.getElementById('filter-section');
+    filterSection.textContent = '';
+  
+    
+    // Set new Data Filter
+    const filterDiv = document.createElement('div');
+    filterDiv.classList.add('flex', 'flex-col', 'sm:flex-row', 'gap-3', 'justify-between', 'w-full', 'items-center');
+    filterDiv.innerHTML = `
+    <div class="flex gap-3 justify-start items-center">
+        <span>Sort By:</span>
+        <select class="select select-bordered">
+            <option disabled selected>View</option>
+            <option>Date</option>
+        </select>
+    </div>
+    <div class="flex gap-2 justify-end">
+        <button class="btn btn-primary" onclick="filterContent('is_todays_pick')">Today's Pick</button>
+        <button class="btn btn-outline btn-primary" onclick="filterContent('is_trending')">Trending</button>
+    </div>`;
+    filterSection.appendChild(filterDiv);
+
+
+
+
+
+
+
+
+
+
 };
 
 const getCategory = async () => {
